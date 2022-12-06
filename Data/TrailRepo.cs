@@ -1,7 +1,8 @@
 using TrailService.Models;
 using System.Linq;
 
-namespace TrailService.Data {
+namespace TrailService.Data
+{
     public class TrailRepo : ITrailRepo
     {
         private readonly TrailDbContext _context;
@@ -10,28 +11,29 @@ namespace TrailService.Data {
         {
             _context = context;
         }
-        public void CreateTrail(Trail tr)
+        public void CreateTrail(TrailPoint tr)
         {
-            if(tr == null) {
+            if (tr == null)
+            {
                 throw new ArgumentNullException(nameof(tr));
             }
 
-            _context.Trails.Add(tr);
+            _context.TrailPoints.Add(tr);
         }
 
-        public IEnumerable<Trail> GetAllTrails()
+        public IEnumerable<TrailPoint> GetAllTrails()
         {
-            return _context.Trails.ToList();
+            return _context.TrailPoints.ToList();
         }
 
-        public Trail GetTrailById(int id)
+        public TrailPoint GetTrailById(int id)
         {
-            return _context.Trails.FirstOrDefault(t => t.TrailId == id);
+            return _context.TrailPoints.FirstOrDefault(t => t.TrailId == id);
         }
 
         public bool SaveChanges() // Used for unsafe changes
         {
-            return (_context.SaveChanges() >= 0);
+            return _context.SaveChanges() >= 0;
         }
     }
 }

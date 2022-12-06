@@ -11,7 +11,7 @@ builder.Services.AddDbContext<TrailDbContext>(opt => opt.UseInMemoryDatabase("In
 
 // Add interface and class
 builder.Services.AddScoped<ITrailRepo, TrailRepo>();
-
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -25,7 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-PrepDb.PrepPopulation(app);
+PrepSampleDb.PrepPopulation(app);
 
 app.UseHttpsRedirection();
 

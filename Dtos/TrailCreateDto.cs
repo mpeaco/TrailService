@@ -1,28 +1,28 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TrailService.Models
+namespace TrailService.Dtos
 {
-    public class Trail 
+    public class TrailCreateDto
     {
         [Key]
         [Required]
-        public int TrailId { get; set; }
+        public int PointId { get; set; }
 
         [Required]
         public string TrailName { get; set; }
 
         [Required]
-        public int PointId { get; set; }
+        public int TrailId { get; set; }
 
         [Required]
         public decimal Latitude { get; set; }
 
         [Required]
         public decimal Longitude { get; set; }
-        
+
         public string CommentId { get; set; }
         [Required]
-        public int Elevation { get; set; }
+        public decimal Elevation { get; set; }
         public string TrailOwner { get; set; }
 
     }
