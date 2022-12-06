@@ -16,41 +16,29 @@ namespace TrailService.Data
         /// <param name="context"></param>
         private static void SeedData(TrailDbContext context)
         {
-            if (!context.TrailPoints.Any())
+            if (!context.TrailViews.Any())
             {
-                context.TrailPoints.AddRange(
-                    new Models.TrailPoint()
+                context.TrailViews.AddRange(
+                    new Models.TrailView()
                     {
-                        TrailId = 0,
-                        TrailName = "Seeded trail",
-                        TrailOwner = "Mark Peacock",
-                        CommentId = "cm_0",
-                        PointId = 1,
-                        Longitude = (decimal)-4.04030000,
-                        Latitude = (decimal)50.46449000,
-                        Elevation = (decimal)232.0
+                        //TrailId = 0,
+                        TrailName = "Seeded trail1",
+                        TrailOwner = "Mack",
+
                     },
-                    new Models.TrailPoint()
+                    new Models.TrailView()
                     {
-                        TrailId = 0,
-                        TrailName = "Seeded trail",
-                        TrailOwner = "Mark Peacock",
-                        CommentId = "No comment",
-                        PointId = 2,
-                        Longitude = (decimal)-4.24030000,
-                        Latitude = (decimal)50.46449000,
-                        Elevation = (decimal)234.0
+                        //TrailId = 0,
+                        TrailName = "Seeded trail2",
+                        TrailOwner = "Marco",
+
                     },
-                    new Models.TrailPoint()
+                    new Models.TrailView()
                     {
-                        TrailId = 0,
-                        TrailName = "Seeded trail",
-                        TrailOwner = "Mark Peacock",
-                        CommentId = "No comment",
-                        PointId = 3,
-                        Longitude = (decimal)-4.25030000,
-                        Latitude = (decimal)51.13309000,
-                        Elevation = (decimal)232.0
+                        //TrailId = 0,
+                        TrailName = "Seeded trail3",
+                        TrailOwner = "Maaock",
+
                     }
                 );
                 context.SaveChanges();

@@ -9,10 +9,10 @@ namespace TrailService.Profiles
         public TrailsProfile()
         {
             // Create mappings from source to target: Trail Model -> TrailReadDto
-            CreateMap<TrailPoint, TrailReadDto>();
+            CreateMap<TrailView, TrailReadDto>();
 
             // Mapping for create dto -> to a Trail point model
-            CreateMap<TrailCreateDto, TrailPoint>();
+            CreateMap<TrailCreateDto, TrailView>();
         }
     }
 }

@@ -11,24 +11,24 @@ namespace TrailService.Data
         {
             _context = context;
         }
-        public void CreateTrail(TrailPoint tr)
+        public void CreateTrail(TrailView tr)
         {
             if (tr == null)
             {
                 throw new ArgumentNullException(nameof(tr));
             }
 
-            _context.TrailPoints.Add(tr);
+            _context.TrailViews.Add(tr);
         }
 
-        public IEnumerable<TrailPoint> GetAllTrails()
+        public IEnumerable<TrailView> GetAllTrails()
         {
-            return _context.TrailPoints.ToList();
+            return _context.TrailViews.ToList();
         }
 
-        public TrailPoint GetTrailById(int id)
+        public TrailView GetTrailById(int id)
         {
-            return _context.TrailPoints.FirstOrDefault(t => t.TrailId == id);
+            return _context.TrailViews.FirstOrDefault(t => t.TrailId == id);
         }
 
         public bool SaveChanges() // Used for unsafe changes

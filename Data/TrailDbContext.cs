@@ -10,6 +10,6 @@ namespace TrailService.Data
 
         }
 
-        public DbSet<TrailPoint> TrailPoints { get; set; }
+        public DbSet<TrailView> TrailViews { get; set; }
     }
 }

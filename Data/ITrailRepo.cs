@@ -7,8 +7,8 @@ namespace TrailService.Data
     {
         bool SaveChanges();
 
-        IEnumerable<TrailPoint> GetAllTrails();
-        TrailPoint GetTrailById(int id);
-        void CreateTrail(TrailPoint tr);
+        IEnumerable<TrailView> GetAllTrails();
+        TrailView GetTrailById(int id);
+        void CreateTrail(TrailView tr);
     }
 }
