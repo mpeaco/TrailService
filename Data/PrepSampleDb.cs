@@ -21,23 +21,22 @@ namespace TrailService.Data
                 context.TrailViews.AddRange(
                     new Models.TrailView()
                     {
-                        //TrailId = 0,
-                        TrailName = "Seeded trail1",
-                        TrailOwner = "Mack",
+                        TrailName = "Cadover Bridge to Shaugh Bridge Circular",
+                        TrailOwner = "Grace Hopper",
 
                     },
                     new Models.TrailView()
                     {
-                        //TrailId = 0,
-                        TrailName = "Seeded trail2",
-                        TrailOwner = "Marco",
+                        //TrailId = 2
+                        TrailName = "Combe Martin Circular",
+                        TrailOwner = "Tim Berners-Lee",
 
                     },
                     new Models.TrailView()
                     {
-                        //TrailId = 0,
-                        TrailName = "Seeded trail3",
-                        TrailOwner = "Maaock",
+                        //TrailId = 3
+                        TrailName = "Lyton, Watersmeet and Valley of the Rocks",
+                        TrailOwner = "Ada Lovelace",
 
                     }
                 );

@@ -14,10 +14,10 @@ var database = configuration["DB"] = "Mark_peacockDB";
 // Add services to the container.
 builder.Services.AddDbContext<TrailDbContext>(opt =>
 {
-    opt.UseInMemoryDatabase("InMem");
+    //opt.UseInMemoryDatabase("InMem");
 
     // Using the database string for local mssql 
-    //opt.UseSqlServer(($"Server={server}, {port};Initial Catalog={database};User ID={user};Password={pwd}; TrustServerCertificate=true"));
+    opt.UseSqlServer(($"Server={server}, {port};Initial Catalog={database};User ID={user};Password={pwd}; TrustServerCertificate=true"));
 
     opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
@@ -41,7 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-PrepSampleDb.PrepPopulation(app);
+//PrepSampleDb.PrepPopulation(app);
 
 app.UseHttpsRedirection();
 
