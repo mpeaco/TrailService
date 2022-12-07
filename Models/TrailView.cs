@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TrailService.Models
 {
 
-    [Table("Trails", Schema = "Cw1")]
+    [Table("Trails", Schema = "Cw1")] //    Needs to change to CW2 for submission using remote server
     public class TrailView
     {
         [Column("Trail_name")]

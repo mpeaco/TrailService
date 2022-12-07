@@ -3,7 +3,7 @@ using TrailService.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// database config for localhost sql server
 IConfiguration configuration = builder.Configuration;
 var server = configuration["DbServer"] ?? "localhost";
 var port = configuration["DbPort"] ?? "1433";
