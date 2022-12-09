@@ -8,7 +8,12 @@ namespace TrailService.Data
         bool SaveChanges();
 
         IEnumerable<TrailView> GetAllTrails();
+
         TrailView GetTrailById(int id);
         void CreateTrail(TrailView tr);
+
+        IEnumerable<UserView> GetAllUsers();
+
+        UserView GetUserById(string username);
     }
 }

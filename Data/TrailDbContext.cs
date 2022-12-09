@@ -11,5 +11,6 @@ namespace TrailService.Data
         }
 
         public DbSet<TrailView> TrailViews { get; set; }
+        public DbSet<UserView> UserViews { get; set; }
     }
 }

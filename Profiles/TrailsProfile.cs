@@ -13,6 +13,10 @@ namespace TrailService.Profiles
 
             // Mapping for create dto -> to a Trail point model
             CreateMap<TrailCreateDto, TrailView>();
+
+            CreateMap<UserView, UserReadDto>();
+
+            CreateMap<UserCreateDto, UserView>();
         }
     }
 }

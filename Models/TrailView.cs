@@ -3,8 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TrailService.Models
 {
-
-    [Table("Trails", Schema = "Cw1")] //    Needs to change to CW2 for submission using remote server
+    [Table("Trails", Schema = "CW1")] //    Needs to change to CW2 for submission using remote server
     public class TrailView
     {
         [Column("Trail_name")]
@@ -19,7 +18,4 @@ namespace TrailService.Models
         public string TrailOwner { get; set; }
 
     }
-
-
-
 }

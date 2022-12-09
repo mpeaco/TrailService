@@ -21,6 +21,11 @@ namespace TrailService.Data
             _context.TrailViews.Add(tr);
         }
 
+        public IEnumerable<UserView> GetAllUsers()
+        {
+            return _context.UserViews.ToList();
+        }
+
         public IEnumerable<TrailView> GetAllTrails()
         {
             return _context.TrailViews.ToList();
@@ -29,6 +34,11 @@ namespace TrailService.Data
         public TrailView GetTrailById(int id)
         {
             return _context.TrailViews.FirstOrDefault(t => t.TrailId == id);
+        }
+
+        public UserView GetUserById(string username)
+        {
+            return _context.UserViews.FirstOrDefault(u => u.Username == username);
         }
 
         public bool SaveChanges() // Used for unsafe changes
