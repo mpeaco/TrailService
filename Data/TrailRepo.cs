@@ -48,7 +48,6 @@ namespace TrailService.Data
 
         public IEnumerable<LocationPointsView> GetLocationPointsForTrail(string trailName)
         {
-            // TODO: This only returns a single location point and it needs to return all
             return _context.LocationPointsViews.Where(t => t.TrailName == trailName);
 
         }
