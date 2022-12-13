@@ -23,7 +23,7 @@ namespace TrailService.Controllers
         // Get all location points 
         public ActionResult<IEnumerable<TrailReadDto>> GetTrails()
         {
-            Console.WriteLine("Getting Trail Location Points");
+            Console.WriteLine("Getting Trails");
 
             var TrailPointItem = _repository.GetAllTrails();
 
@@ -70,7 +70,7 @@ namespace TrailService.Controllers
         }
 
         [HttpGet("{username}")]
-        public ActionResult<TrailReadDto> GetUserByUsername(string username)
+        public ActionResult<UserReadDto> GetUserByUsername(string username)
         {
             Console.WriteLine("Getting User: " + username);
             var UserItem = _repository.GetUserById(username);
@@ -80,6 +80,50 @@ namespace TrailService.Controllers
             }
 
             return NotFound($"User {username} does not exist");
+        }
+
+    }
+
+    [Route("api/Locationpoints")]
+    [ApiController]
+    public class PointsController : ControllerBase
+    {
+        private readonly ITrailRepo _repository;
+        private readonly IMapper _mapper;
+
+        public PointsController(ITrailRepo repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        // Get all location points 
+        public ActionResult<IEnumerable<LocationPointReadDto>> GetLocationPoints()
+        {
+            Console.WriteLine("Getting Points");
+
+            var PointItem = _repository.GetAllLocationPoints();
+            if (PointItem != null)
+            {
+                return Ok(_mapper.Map<IEnumerable<LocationPointReadDto>>(PointItem));
+            }
+            return NotFound("Points not found");
+
+
+        }
+
+        [HttpGet("{trailname}")]
+        public ActionResult<IEnumerable<LocationPointReadDto>> GetPointsByTrailName(string trailname)
+        {
+            Console.WriteLine("Getting User: " + trailname);
+            var PointItem = _repository.GetLocationPointsForTrail(trailname);
+            if (PointItem != null)
+            {
+                return Ok(_mapper.Map<IEnumerable<LocationPointReadDto>>(PointItem));
+            }
+
+            return NotFound($"Trail {trailname} does not exist");
         }
 
     }

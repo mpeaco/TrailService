@@ -11,15 +11,16 @@ var port = configuration["DbPort"] ?? "1433";
 var user = configuration["DbUser"] = "SA";
 var pwd = configuration["DbPwd"] = "C0mp2001!";
 var database = configuration["DB"] = "Mark_peacockDB";
-/*
 
+
+/*
 // Config for remote server
 var server = configuration["DbServer"] ?? "socem1.uopnet.plymouth.ac.uk";
 var user = configuration["DbUser"] = "MPeacock";
 var pwd = configuration["DbPwd"] = "IcnR568*";
 var database = configuration["DB"] = "COMP2001_MPeacock";
-
 */
+
 // Add services to the container.
 builder.Services.AddDbContext<TrailDbContext>(opt =>
 {

@@ -17,6 +17,10 @@ namespace TrailService.Profiles
             CreateMap<UserView, UserReadDto>();
 
             CreateMap<UserCreateDto, UserView>();
+
+            CreateMap<LocationPointsView, LocationPointReadDto>();
+
+            CreateMap<LocationPointCreateDto, LocationPointsView>();
         }
     }
 }
